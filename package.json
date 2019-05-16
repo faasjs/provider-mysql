@@ -17,8 +17,8 @@
     "lib"
   ],
   "dependencies": {
-    "mysql": "*",
-    "@faasjs/logger": "beta"
+    "@faasjs/logger": "beta",
+    "mysql": "*"
   },
   "devDependencies": {
     "@babel/core": "*",
@@ -28,8 +28,8 @@
     "@types/debug": "*",
     "@types/jest": "*",
     "@types/js-yaml": "*",
-    "@types/node": "*",
     "@types/mysql": "*",
+    "@types/node": "*",
     "babel-jest": "*",
     "jest": "*",
     "jsdoc-babel": "*",

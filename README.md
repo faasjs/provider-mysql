@@ -9,3 +9,20 @@ Mysql 适配
 [![NPM Beta Version](https://img.shields.io/npm/v/@faasjs/provider-mysql/beta.svg)](https://www.npmjs.com/package/@faasjs/provider-mysql)
 
 [接口文档](https://github.com/faasjs/provider-mysql/blob/master/API.md)
+
+## How to use?
+
+1. Add npm to package.json: `yarn add @faasjs/provider-mysql@beta`;
+2. Config connection info in providers folder, support host, user, password and database;
+3. Use it in flow:
+
+```typescript
+new Flow({
+  resources: {
+    mysql: {}
+  }
+}, async function(){
+  const results = await this.mysql.query('SELECT user from id = ?', ['1']);
+  console.log(results[0].id); // => 1
+})
+```
