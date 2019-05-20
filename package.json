@@ -1,6 +1,6 @@
 {
   "name": "@faasjs/provider-mysql",
-  "version": "0.0.0-alpha.0",
+  "version": "0.0.0-alpha.1",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,7 +24,7 @@
     "@babel/core": "*",
     "@babel/preset-env": "*",
     "@babel/preset-typescript": "*",
-    "@faasjs/eslint-config-recommended": "0.0.0-alpha.1",
+    "@faasjs/eslint-config-recommended": "beta",
     "@types/debug": "*",
     "@types/jest": "*",
     "@types/js-yaml": "*",

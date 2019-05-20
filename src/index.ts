@@ -5,13 +5,25 @@ class ProviderMysql {
   public pool: Pool;
   public logger: Logger;
 
-  constructor (opts: any) {
+  constructor (opts: {
+    resource: {
+      config: {
+        host: string;
+        user: string;
+        password: string;
+        database: string;
+        [key: string]: any;
+      };
+      [key: string]: any;
+    };
+    [key: string]: any;
+  }) {
     this.logger = new Logger('@faasjs/provider-mysql');
 
     const config = Object.assign({
       connectionLimit: 1,
       port: 3306
-    }, opts.config);
+    }, opts.resource.config);
 
     this.logger.debug('createPool: %o', config);
     this.pool = createPool(config);
@@ -48,6 +60,18 @@ class ProviderMysql {
   }
 }
 
-export default function (opts: any) {
+export default function (opts: {
+  resource: {
+    config: {
+      host: string;
+      user: string;
+      password: string;
+      database: string;
+      [key: string]: any;
+    };
+    [key: string]: any;
+  };
+  [key: string]: any;
+}) {
   return new ProviderMysql(opts);
 }
