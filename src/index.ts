@@ -6,16 +6,10 @@ class ProviderMysql {
   public logger: Logger;
 
   constructor (opts: {
-    resource: {
-      config: {
-        host: string;
-        user: string;
-        password: string;
-        database: string;
-        [key: string]: any;
-      };
-      [key: string]: any;
-    };
+    host: string;
+    user: string;
+    password: string;
+    database: string;
     [key: string]: any;
   }) {
     this.logger = new Logger('@faasjs/provider-mysql');
@@ -61,17 +55,14 @@ class ProviderMysql {
 }
 
 export default function (opts: {
-  resource: {
-    config: {
-      host: string;
-      user: string;
-      password: string;
-      database: string;
-      [key: string]: any;
-    };
+  config: {
+    host: string;
+    user: string;
+    password: string;
+    database: string;
     [key: string]: any;
   };
   [key: string]: any;
 }) {
-  return new ProviderMysql(opts);
+  return new ProviderMysql(opts.config);
 }
